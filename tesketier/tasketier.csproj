@@ -7,8 +7,8 @@
     <ProjectGuid>{689C89D5-4594-4F9C-A5BD-983F33DBFE52}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>tesketier</RootNamespace>
-    <AssemblyName>tesketier</AssemblyName>
+    <RootNamespace>Tasketier</RootNamespace>
+    <AssemblyName>Tasketier</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>

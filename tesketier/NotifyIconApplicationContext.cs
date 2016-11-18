@@ -1,19 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Drawing;
-using System.Linq;
 using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using tesketier;
-
-/// <summary>
-/// http://www.codeproject.com/Articles/18683/Creating-a-Tasktray-Application [ICR]
-/// http://www.codeproject.com/Tips/627796/Doing-a-NotifyIcon-program-the-right-way  Johnny J.
-/// </summary>
-
 
 namespace tasketier
 {
@@ -22,7 +10,7 @@ namespace tasketier
         private NotifyIcon notifyIcon = new NotifyIcon();
         private ContextMenuStrip notifyIconContextMenu = new ContextMenuStrip();
         private Configuration configWindow = new Configuration();
-        private TaskPanelButtons newTaskPanel = new TaskPanelButtons();
+        private TaskPanel newTaskPanel = new TaskPanel();
         private Button newTestButton = new Button();
 
         public NotifyIconApplicationContext()
@@ -30,10 +18,10 @@ namespace tasketier
             newTestButton.Text = "Add";
             newTestButton.Click += new EventHandler(addTaskTester);
 
-            ContextMenuBuild();
+            ContextMenuBuild(); 
 
             notifyIcon.Text = "Testing";
-            notifyIcon.Icon = Properties.Resources.tempIcon;
+            notifyIcon.Icon = Tasketier.Properties.Resources.tempIcon;
             notifyIcon.ContextMenuStrip = notifyIconContextMenu;
             notifyIcon.MouseUp += new MouseEventHandler(NotifyIcon_MouseUp);
             notifyIcon.Visible = true;
@@ -66,10 +54,13 @@ namespace tasketier
 
         void addTaskTester(object sender, EventArgs e)
         {
-            for (int i = 0; i < 10; i++)
+            Random random = new Random();
+
+            for (int i = 0; i < random.Next(10); i++)
             {
-                newTaskPanel.AddButton("test", Properties.Resources.tempIcon.ToBitmap());
+                newTaskPanel.AddButton("test" + i.ToString(), Tasketier.Properties.Resources.tempIcon.ToBitmap());
             }
+
             Console.WriteLine("Notify size = {0} Task Panel size = {1}", notifyIconContextMenu.Size, newTaskPanel.Size);
         }
 

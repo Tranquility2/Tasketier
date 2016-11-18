@@ -1,6 +1,6 @@
 ﻿namespace tesketier
 {
-    partial class TaskPanelButtons
+    partial class TaskPanel
     {
         /// <summary> 
         /// Required designer variable.
